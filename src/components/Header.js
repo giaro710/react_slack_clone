@@ -14,7 +14,11 @@ const Header = () => {
       </div>
       <div className="header__search">
         <SearchIcon />
-        <input type="text" placeholder="Search" />
+        <input
+          className="header__search--input"
+          type="text"
+          placeholder="Search"
+        />
       </div>
       <div className="header__right">
         <HelpOutlineIcon />
