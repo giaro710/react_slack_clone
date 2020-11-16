@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SidebarOption from "./SidebarOption";
 import db from "../firebase";
 
-import "../Sidebar.css";
+import "../css/Sidebar.css";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import CreateIcon from "@material-ui/icons/Create";
 import InsertCommentIcon from "@material-ui/icons/InsertComment";
