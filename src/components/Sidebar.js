@@ -33,7 +33,7 @@ const Sidebar = () => {
 
   const renderChannels = () => {
     return channels.map((channel) => {
-      return <SidebarOption title={channel.name} />;
+      return <SidebarOption title={channel.name} id={channel.id} />;
     });
   };
 
@@ -60,7 +60,7 @@ const Sidebar = () => {
       <hr />
       <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
       <hr />
-      <SidebarOption Icon={AddIcon} title="Add Channel" />
+      <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
       {renderChannels()}
     </div>
   );
