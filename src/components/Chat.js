@@ -20,7 +20,7 @@ const Chat = () => {
     }
 
     db.collection("rooms")
-      .docs(roomId)
+      .doc(roomId)
       .collection("messages")
       .onSnapshot((snapshot) =>
         setRoomMessages(snapshot.docs.map((doc) => doc.data()))
