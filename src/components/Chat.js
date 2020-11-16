@@ -14,7 +14,7 @@ const Chat = () => {
   useEffect(() => {
     if (roomId) {
       db.collection("rooms")
-        .document(roomId)
+        .doc(roomId)
         .onSnapshot((snapshot) => setRoomDetails(snapshot.data()));
     }
   }, [roomId]);
