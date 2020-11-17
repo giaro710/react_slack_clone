@@ -15,7 +15,7 @@ const Header = () => {
         <Avatar
           className="header__avatar"
           alt={user?.displayName}
-          src={user?.photoUrl}
+          src={user?.photoURL}
         />
         <AccessTimeIcon />
       </div>
