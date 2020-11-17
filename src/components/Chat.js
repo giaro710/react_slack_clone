@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import db from "../firebase";
+import Message from "./Message";
 
 import "../css/Chat.css";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
@@ -28,6 +29,20 @@ const Chat = () => {
       );
   }, [roomId]);
 
+  const renderMessages = () => {
+    return roomMessages.map(({ id, message, timestamp, user, userImage }) => {
+      return (
+        <Message
+          id={id}
+          message={message}
+          timestamp={timestamp}
+          user={user}
+          userImage={userImage}
+        />
+      );
+    });
+  };
+
   return (
     <div className="chat">
       <div className="chat__header">
@@ -44,7 +59,7 @@ const Chat = () => {
         </div>
       </div>
 
-      <div className="chat__messages"></div>
+      <div className="chat__messages">{renderMessages()}</div>
     </div>
   );
 };
