@@ -27,3 +27,8 @@
 .sidebarOption__hash {
   padding: 10px;
 }
+
+.sidebarOption__channel--title {
+  font-weight: bold;
+  font-size: 18px;
+}

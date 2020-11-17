@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import "../css/SidebarOption.css";
 import db from "../firebase";
 
-const SidebarOption = ({ Icon, title, id, addChannelOption }) => {
+const SidebarOption = ({ Icon, title, id, addChannelOption, channelTitle }) => {
   const history = useHistory();
 
   const selectChannel = () => {
@@ -34,7 +34,11 @@ const SidebarOption = ({ Icon, title, id, addChannelOption }) => {
       {Icon ? (
         <h3>{title}</h3>
       ) : (
-        <h3 className="sidebarOption__channel">
+        <h3
+          className={`sidebarOption__channel ${
+            channelTitle ? "sidebarOption__channel--title" : ""
+          }`}
+        >
           <span className="sidebarOption__hash">#</span>
           {title}
         </h3>
