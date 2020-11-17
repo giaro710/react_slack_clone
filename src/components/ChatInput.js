@@ -13,12 +13,19 @@ const ChatInput = ({ channelName, channelId }) => {
     e.preventDefault();
 
     if (channelId) {
-      db.collection("rooms").doc(channelId).collection("messages").set({
-        message: input,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        user: user.displayName,
-        userImage: user.photoURL,
-      });
+      db.collection("rooms")
+        .doc(channelId)
+        .collection("messages")
+        .set({
+          message: input,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          user: user.displayName,
+          userImage: user.photoURL,
+        })
+        .then(function () {
+          console.log("done succesfully");
+        })
+        .catch((error) => alert(error));
     }
   };
 
@@ -29,7 +36,7 @@ const ChatInput = ({ channelName, channelId }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          placeholder={`Mesage #${channelName?.toLowerCase()}`}
+          placeholder={`Message #${channelName?.toLowerCase()}`}
         />
         <button type="submit" onClick={sendMessage}>
           SEND
