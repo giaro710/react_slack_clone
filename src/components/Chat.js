@@ -28,8 +28,6 @@ const Chat = () => {
       );
   }, [roomId]);
 
-  console.log(roomMessages);
-
   return (
     <div className="chat">
       <div className="chat__header">
@@ -45,6 +43,8 @@ const Chat = () => {
           </p>
         </div>
       </div>
+
+      <div className="chat__messages"></div>
     </div>
   );
 };
