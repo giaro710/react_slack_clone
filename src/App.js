@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 import "./App.css";
 import Header from "./components/Header";
@@ -8,7 +9,7 @@ import Chat from "./components/Chat";
 import Login from "./components/Login";
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="App">

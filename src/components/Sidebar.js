@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SidebarOption from "./SidebarOption";
 import db from "../firebase";
+import { useStateValue } from "../StateProvider";
 
 import "../css/Sidebar.css";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
@@ -15,10 +16,11 @@ import FileCopyIcon from "@material-ui/icons/FileCopy";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AddIcon from "@material-ui/icons/Add";
-// import { render } from "@testing-library/react";
+//import { render } from "@testing-library/react";
 
 const Sidebar = () => {
   const [channels, setChannels] = useState([]);
+  const [{ user }] = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -44,7 +46,7 @@ const Sidebar = () => {
           <h2 className="sidebar__info--workspace">Friends</h2>
           <h3 className="sidebar__info--profile">
             <FiberManualRecordIcon />
-            Gian Marco Romani
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
