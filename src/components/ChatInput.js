@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import firebase from "../firebase";
+import firebase from "firebase";
 import db from "../firebase";
 import { useStateValue } from "../StateProvider";
 
 import "../css/ChatInput.css";
 
 const ChatInput = ({ channelName, channelId }) => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
   const [{ user }] = useStateValue();
+  console.log(input);
+  console.log(user);
+  console.log(`This is the ${channelId}`);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -16,7 +19,7 @@ const ChatInput = ({ channelName, channelId }) => {
       db.collection("rooms")
         .doc(channelId)
         .collection("messages")
-        .set({
+        .add({
           message: input,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           user: user.displayName,
