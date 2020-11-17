@@ -58,9 +58,9 @@ const Sidebar = () => {
       <SidebarOption Icon={PeopleAltIcon} title="People & User groups" />
       <SidebarOption Icon={AppsIcon} title="Apps" />
       <SidebarOption Icon={FileCopyIcon} title="File Browser" />
-      <SidebarOption Icon={ExpandLessIcon} title="Show less" />
+      {/* <SidebarOption Icon={ExpandLessIcon} title="Show less" /> */}
       <hr />
-      <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
+      <SidebarOption title="Channels" channelTitle />
       <hr />
       <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
       {renderChannels()}
