@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import db from "../firebase";
 import Message from "./Message";
+import ChatInput from "./ChatInput";
 
 import "../css/Chat.css";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
@@ -60,6 +61,8 @@ const Chat = () => {
       </div>
 
       <div className="chat__messages">{renderMessages()}</div>
+
+      <ChatInput channelName={roomDetails?.name} channelId={roomId} />
     </div>
   );
 };
