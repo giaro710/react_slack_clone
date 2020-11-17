@@ -30,6 +30,7 @@ const ChatInput = ({ channelName, channelId }) => {
         })
         .catch((error) => alert(error));
     }
+    setInput("");
   };
 
   return (
