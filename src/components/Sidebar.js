@@ -43,7 +43,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebar__header">
         <div className="sidebar__info">
-          <h2 className="sidebar__info--workspace">Friends</h2>
+          <h2 className="sidebar__info--workspace">Friends of Code</h2>
           <h3 className="sidebar__info--profile">
             <FiberManualRecordIcon />
             {user?.displayName}
