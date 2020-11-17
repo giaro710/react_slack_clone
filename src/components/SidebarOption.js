@@ -32,7 +32,7 @@ const SidebarOption = ({ Icon, title, id, addChannelOption, channelTitle }) => {
     >
       {Icon && <Icon className="sidebarOption__icon" />}
       {Icon ? (
-        <h3>{title}</h3>
+        <h3 style={{ color: "#fff" }}>{title}</h3>
       ) : (
         <h3
           className={`sidebarOption__channel ${
