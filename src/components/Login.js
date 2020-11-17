@@ -1,8 +1,20 @@
 import React from "react";
 import "../css/Login.css";
 import { Button } from "@material-ui/core";
+import { auth, provider } from "../firebase";
 
 function Login() {
+  const signIn = (e) => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   return (
     <div className="login">
       <div className="login__container">
@@ -13,7 +25,9 @@ function Login() {
         />
         <h1>Sign in to Code Freaks</h1>
         <p>codefreaks.slack.com</p>
-        <Button className="login__btn">Sign in with Google</Button>
+        <Button onClick={signIn} className="login__btn">
+          Sign in with Google
+        </Button>
       </div>
     </div>
   );
